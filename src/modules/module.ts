@@ -4,6 +4,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import { TransformInterceptor } from 'src/intercepters/transform';
 import { ConfigModule } from '@nestjs/config';
+import { MainController } from './controller';
 
 @Module({
   imports: [
@@ -13,7 +14,7 @@ import { ConfigModule } from '@nestjs/config';
     ),
     QuestionModule,
   ],
-  controllers: [],
+  controllers: [MainController],
   providers: [{ provide: APP_INTERCEPTOR, useClass: TransformInterceptor }],
 })
 export class AppModule {}
