@@ -13,6 +13,9 @@ export class Questions {
 
   @Prop()
   answers: Answers[];
+
+  @Prop()
+  explain: string;
 }
 
 export type QuestionDocument = HydratedDocument<Questions>;
